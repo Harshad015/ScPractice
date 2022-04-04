@@ -14,23 +14,23 @@ export default class RecordTypePicklist extends LightningElement
     @wire(getObjectInfo, { objectApiName: ACCOUNT_OBJECT })
     accountMetadata;
 
-    // @wire(getPicklistValues,
+    @wire(getPicklistValues,
 
-    //     {
+        {
 
-    //         recordTypeId: '$recordTypeId',
+            recordTypeId: '$recordTypeId',
 
-    //         fieldApiName: TYPE_OPP
+            fieldApiName: TYPE_OPP
 
-    //     }
+        }
 
-    // )
+    )
 
-    // typePicklist;
+    typePicklist;
 
-    // handleChange(event) {
+    handleChange(event) {
 
-    //     this.value = event.detail.value;
+        this.value = event.detail.value;
 
-    // }
+    }
 }
