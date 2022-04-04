@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" value={passProgress} onkeyup={handlechange} label="Enter some text"></lightning-input>
+    </div>
+
+    <c-p2c-progress progress-value={passProgress}></c-p2c-progress>
+
+    <!-- calling chil  method from parent -->
+    <lightning-card title="">
+
+        <lightning-button variant="brand" label="Reset" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+        <c-p2c-slider-cmp></c-p2c-slider-cmp>
+
+    </lightning-card>
+</template>

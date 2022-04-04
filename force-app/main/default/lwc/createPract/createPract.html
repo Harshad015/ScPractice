@@ -1,0 +1,57 @@
+<template>
+<lightning-card title="Account Information">
+    <lightning-layout >
+        <lightning-layout-item padding="around-small">
+        Account: {accountName} <br />
+        Account Number: {accountNumber}
+        </lightning-layout-item>
+        
+    </lightning-layout>
+    <lightning-card title="For Loop">
+        <template for:each={sectionNames} for:item="acc">
+            <ul key={acc.id}>{acc.heading}</ul>
+            <template for:each={acc.layoutRows} for:item="ros">
+                 <!-- <li key={ros.layoutItems}>{ros.layoutItems.label}</li>  -->
+                <template for:each={ros.layoutItems} for:item="fill">
+                    
+                    <li key={fill.label}>{fill.label}</li>
+                </template>
+            </template>
+        </template>
+    </lightning-card>
+    
+    
+
+    <lightning-record-edit-form object-api-name="Contact"  onsuccess={handleSuccess}>
+        <lightning-messages>
+        </lightning-messages>
+       
+        <lightning-accordion allow-multiple-sections-open class="example-accordion slds-grid slds-gutters"
+            active-section-name={activeSections}>
+
+            <template   for:each={sectionName} for:item="acc">
+                <lightning-accordion-section style="padding: 24px;"  key={acc} name={acc.heading} label={acc.heading}>
+
+                    
+                    <template for:each={acc.layoutRows} for:item="ros">
+                    <template  for:each={ros.layoutItems} for:item="fill">
+                        <lightning-input-field  key={fill.label} field-name={fill.label}>
+                        </lightning-input-field>
+                    </template>
+                </template>
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion> 
+    
+        <!-- <div class="slds-align_absolute-center">
+            <lightning-button label="Cancel" title="Cancel" onclick={handleCancel} class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button type="submit" variant="brand" label="Save" title="Save" class="slds-m-left_x-small">
+            </lightning-button>
+        </div> -->
+    </lightning-record-edit-form>
+
+    </lightning-card>
+
+    
+</template>

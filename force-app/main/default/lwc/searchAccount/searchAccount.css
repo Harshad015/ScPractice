@@ -1,0 +1,9 @@
+.styleParent{
+    background-color: coral;
+    color: black;
+    height: 50px;
+    font-size: large;
+    font-family: sans-serif;
+    padding-left: 6px;
+    padding-top: 10px;
+}

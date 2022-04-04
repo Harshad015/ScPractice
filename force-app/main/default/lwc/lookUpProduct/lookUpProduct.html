@@ -1,0 +1,15 @@
+<template>
+    <!-- <lightning-card title="LookUpToProduct">
+        <lightning-record-form object-api-name="PricebookEntry" fields={MyFiled}>
+
+        </lightning-record-form>
+    </lightning-card> -->
+    <lightning-card title="products">
+        <ul class="slds-m-around_medium">
+            <template for:each={record.data} for:item="acc">
+                <!-- <p key={acc.Id}>{acc.Name}</p> -->
+                <li key={acc.id}>{acc.Name}</li>
+        </template>  
+    </ul>
+      </lightning-card>
+</template>

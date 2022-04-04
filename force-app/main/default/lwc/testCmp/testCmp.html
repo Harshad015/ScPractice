@@ -1,0 +1,54 @@
+<template>
+<lightning-card>
+    <input type="text" onkeyup={Chnage}>
+    <div>{fullName} is from {title}</div>
+</lightning-card>
+<lightning-card title="@track Properties">
+    <input type="text" onkeyup={trackHandler}>
+    <div>{address.city} is my city and country is {Ind}</div>
+    <p>{Ind}</p>
+</lightning-card>
+
+<lightning-card title="Conditional Rendering">
+    <div>
+        <lightning-button variant="base" 
+                            label="OnClick" 
+                            title="Looks like a link" 
+                            onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </div>
+
+    <div if:true={flag}>
+        <p>HI Welcome To the SalesForce Hub</p>
+    
+    </div>
+</lightning-card>
+<lightning-card title="For LoopIng">
+    <template for:each={carlist} for:item="car">
+        
+        <ul class="slds-list_dotted" key={car}>
+            <li> {car} </li>
+            
+            </ul>
+        
+    </template>
+</lightning-card>
+<lightning-card title="Iterator">
+    <template iterator:ceo={ceoList}>
+        <div key={ceo.value.id}>
+            <li class="slds-item">
+                <p>
+                    {ceo.value.company}
+                </p>
+                <p>
+                    {ceo.value.ceo}
+                </p>
+            </li>
+            
+        </div>
+    </template>
+    <h1 > Hi this Is LWC </h1>
+    <lightning-button variant="base" 
+                            label="OnClick" 
+                            title="Looks like a link" 
+                                onclick={handle} class="slds-m-left_x-small"></lightning-button>    </lightning-card>
+</template>

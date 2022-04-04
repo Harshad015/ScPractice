@@ -1,0 +1,75 @@
+<template>
+<lightning-card   style="color: black;" >
+<template if:true={store}>
+    <template for:each={store} for:item="each" for:index="index">
+        <lightning-pill class="slds-m-left_xx-small" onclick={deselect} onremove={removePillItem} key={each.key} label={each} name={index}></lightning-pill>
+    </template>
+    
+</template>
+
+<template if:true={showPill}>
+    <h3 class="slds-text-align_center slds-box slds-theme_shade slds-theme_alert-texture " style="color: black;">No Accounts Are Selected</h3>
+</template>
+
+</lightning-card>
+
+<lightning-card title="Search Account"> 
+<div class="demo-only demo-only--sizing slds-grid slds-wrap" style="background-color:brown">
+<div class="slds-size_1-of-2">
+    <div class="slds-text-align_center slds-m-around_x-small">
+    <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search"></lightning-input>
+    </div>
+</div>
+<div class="slds-size_1-of-2">
+    <div class="slds-text-align_center slds-m-around_x-small">
+        <ul class="slds-list_horizontal slds-has-dividers_right" style="padding-top: 25px; padding-left: 40px;">
+          <template for:each={alphabetArray} for:item="aplha">
+             <span key={aplha}>
+                    <li class="slds-item"  >
+                        <a href="#" class="al" value={aplha} onclick={aphabetClick}>{aplha}  &nbsp;</a> |
+                        <!-- <lightning-button variant="base" label={aplha} onclick={aphabetClick} class="slds-m-left_x-small"></lightning-button> -->
+
+                    </li>
+            </span>
+        
+         </template>
+        </ul>
+    </div>
+</div>
+</div>
+
+</lightning-card>
+<!-- for showing userInput values -->
+<template if:true={checkval}>
+    <lightning-card title="Display Account">
+        <div class="slds-grid slds-wrap">
+            <template for:each={result} for:item="acc">
+                <span key={acc.id}>
+                <div class="slds-col slds-size_2-of-3" style="width: 200px;">
+                <lightning-input class="cb" type="checkbox" checked={showbool}  label={acc.Name}  onchange={getval}></lightning-input>
+                &nbsp;
+                </div>
+                </span>
+            </template>
+            </div>
+    </lightning-card>
+</template>
+
+<template if:true={secondtemplateForList}>
+<lightning-card >
+    <div class="slds-grid slds-wrap">
+        <template for:each={secondtemplateForList} for:item="ad">
+            <span key={ad}>
+            <div class="slds-col slds-size_2-of-3" style="width: 200px;">
+            <lightning-input class="cb" type="checkbox" onchange={getval} checked={showbool} label={ad} ></lightning-input>
+            &nbsp;
+            </div>
+            </span>
+        </template>
+        </div>
+</lightning-card>
+</template>
+
+
+    
+</template>

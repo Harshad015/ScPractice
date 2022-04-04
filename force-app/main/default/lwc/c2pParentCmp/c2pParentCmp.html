@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="child to parent communication">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant="brand" label="ShowModal" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            <h1>{msg}</h1>
+            <template if:true={hideModal}>
+                <c-p2p-modal-cmp onclosemodal={close} ></c-p2p-modal-cmp>
+
+            </template>
+        </div>
+    </lightning-card>
+</template> 
